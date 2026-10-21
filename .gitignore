@@ -1,0 +1,32 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+# Node
+node_modules/
+dist/
+coverage/
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# Data and ML artifacts
+*.tif
+*.tiff
+*.gpkg
+*.parquet
+*.pkl
+*.joblib
+*.onnx
+data/raw/
+data/processed/
+# Keep folders
+!.gitkeep
