@@ -1,0 +1,39 @@
+flowchart LR
+    subgraph EXT[External Sources]
+      SAT[Satellite data]
+      GEO[Geospatial data]
+    end
+    subgraph ETL[ETL and Feature Processing]
+      ING[Ingestion]
+      PRE[Cleaning and alignment]
+      FEAT[Feature extraction]
+      ING --> PRE --> FEAT
+    end
+    DB[(PostgreSQL + PostGIS)]
+    subgraph API[FastAPI Backend]
+      PRED[Prediction service]
+      XAI[SHAP explanation service]
+      NBS[NBS recommendation service]
+      ROUTES[REST API routes]
+      PRED --> XAI
+      PRED --> NBS
+      XAI --> ROUTES
+      NBS --> ROUTES
+      PRED --> ROUTES
+    end
+    subgraph WEB[React + Leaflet Frontend]
+      MAP[Map and layer viewer]
+      PANEL[Area analysis]
+      EXPL[Explanations]
+      REC[Recommendations]
+    end
+    SAT --> ING
+    GEO --> ING
+    FEAT --> DB
+    DB --> PRED
+    DB --> NBS
+    DB --> ROUTES
+    ROUTES --> MAP
+    ROUTES --> PANEL
+    ROUTES --> EXPL
+    ROUTES --> REC
