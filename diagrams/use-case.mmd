@@ -1,0 +1,25 @@
+flowchart LR
+    U[User]
+    A[Administrator]
+    subgraph DSS[Urban Heat DSS for Astana]
+      UC1([View interactive map])
+      UC2([Select area of interest])
+      UC3([View LST and indicators])
+      UC4([Get SHAP explanation])
+      UC5([Explore NBS options])
+      UC6([Compare areas])
+      UC7([Export results])
+      AC1([Update data sources])
+      AC2([Train and evaluate model])
+      AC3([Monitor system])
+    end
+    U --- UC1
+    U --- UC2
+    U --- UC3
+    U --- UC4
+    U --- UC5
+    U --- UC6
+    U --- UC7
+    A --- AC1
+    A --- AC2
+    A --- AC3

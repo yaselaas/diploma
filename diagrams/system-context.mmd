@@ -1,0 +1,15 @@
+flowchart LR
+    U[End User<br/>Urban planners / researchers]
+    A[Administrator]
+    E[Domain Experts]
+    S[Satellite Data Providers<br/>Landsat / Sentinel]
+    G[Geospatial Data Sources<br/>OpenStreetMap / city datasets]
+    D((Urban Heat DSS<br/>for Astana))
+    U -->|Map and analysis requests| D
+    D -->|Results, explanations, NBS options| U
+    A -->|Manage datasets and training| D
+    D -->|Status and model reports| A
+    E -->|Review and feedback| D
+    D -->|Results for validation| E
+    S -->|Satellite imagery and derived indicators| D
+    G -->|Buildings, roads and boundaries| D

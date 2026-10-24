@@ -1,0 +1,4 @@
+field,description,units,source,status
+lst,Land surface temperature,degC,TBD,planned
+ndvi,Normalized Difference Vegetation Index,unitless,TBD,planned
+built_fraction,Fraction of built-up land,0-1,TBD,planned
